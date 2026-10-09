@@ -23,8 +23,16 @@ a:focus-visible { outline: 2px solid #456fad; outline-offset: 3px; }
 .site-nav a:hover { background: #eaeff8; }
 .site-nav a[aria-current="page"] { background: #eaf0f8; }
 main { max-width: var(--content-width); margin: 0 auto; padding: 37px 0 72px; }
-.profile { display: grid; grid-template-columns: 217px minmax(0, 1fr); gap: 34px; align-items: start; margin-bottom: 34px; }
-.profile-photo { display: block; width: 217px; height: 217px; object-fit: cover; background: #dfe8f5; }
+.profile { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 27px; align-items: start; margin-bottom: 34px; }
+/* Original grayscale bear and tiger illustration over a normal portrait image. */
+.portrait-art { position: relative; width: 385px; aspect-ratio: 1160 / 1030; margin-left: -72px; }
+.portrait-art .profile-photo {
+  position: absolute;
+  left: 20.8%; top: 14.2%; width: 54.0%; height: 76.3%;
+  object-fit: cover;
+  background: #dfe8f5;
+}
+.portrait-frame { position: absolute; inset: 0; display: block; width: 100%; height: 100%; pointer-events: none; }
 .profile h2 { color: #111; font-size: 25px; margin: 0 0 12px; }
 .profile .position { font-size: 17px; font-weight: 700; margin: 0 0 24px; }
 .profile .detail { margin: 0 0 15px; }
@@ -48,8 +56,8 @@ li { margin: 3px 0; }
   .site-header h1 { font-size: 26px; }
   .site-nav a { padding: 12px 11px; font-size: 13px; }
   main { padding-top: 26px; }
-  .profile { grid-template-columns: 1fr; gap: 20px; }
-  .profile-photo { width: 190px; height: 190px; }
+  .profile { grid-template-columns: minmax(0, 1fr); gap: 15px; }
+  .portrait-art { width: min(340px, calc(100vw - 32px)); margin-left: 0; }
   .profile .position { margin-bottom: 16px; }
   h2.section-heading { font-size: 20px; }
 }
@@ -61,47 +69,3 @@ li { margin: 3px 0; }
 .research-area .project h3 { margin-bottom: 5px; }
 .research-area[id] { scroll-margin-top: 18px; }
 
-/* Tiny Berkeley easter egg, intentionally the ONLY change to the original style. */
-.site-footer { position: relative; padding-right: 37px; }
-.bear-easter-egg {
-  position: absolute;
-  top: 11px;
-  right: 0;
-  width: 25px;
-  height: 25px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.35;
-  border-radius: 50%;
-  cursor: default;
-  transition: opacity .2s ease, transform .2s ease;
-}
-.bear-icon { width: 23px; height: 23px; display: block; }
-.bear-easter-egg:hover, .bear-easter-egg:focus-visible {
-  opacity: 1;
-  transform: rotate(-8deg);
-}
-.bear-easter-egg:focus-visible { outline: 2px solid #456fad; outline-offset: 3px; }
-.bear-easter-egg__hint {
-  position: absolute;
-  bottom: 31px;
-  right: -8px;
-  width: max-content;
-  padding: 5px 8px;
-  border: 1px solid #e5e5e5;
-  border-radius: 3px;
-  background: white;
-  color: #444;
-  font-size: 12px;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity .2s ease;
-  box-shadow: 0 2px 7px rgba(0,0,0,.06);
-}
-.bear-easter-egg:hover .bear-easter-egg__hint,
-.bear-easter-egg:focus-visible .bear-easter-egg__hint {
-  opacity: 1;
-  visibility: visible;
-}
