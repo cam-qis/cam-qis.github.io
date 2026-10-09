@@ -1,0 +1,43 @@
+/* Traditional, single-page academic homepage — intentionally plain. */
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #fff;
+  color: #171717;
+  font: 16px/1.43 Arial, Helvetica, sans-serif;
+}
+.page { max-width: 860px; padding: 0 26px 38px; margin: 0 auto; }
+a { color: #203f73; text-decoration: underline; }
+a:hover { color: #122952; }
+.site-header { padding: 27px 0 15px; border-bottom: 1px solid #dedfe2; }
+.site-header h1 { color: #243e69; font-size: 28px; font-weight: 700; margin: 0; }
+nav { border-bottom: 1px solid #e7e8eb; padding: 10px 0 11px; font-size: 14px; }
+nav a { margin-right: 19px; text-decoration: none; white-space: nowrap; }
+nav a:hover { text-decoration: underline; }
+.profile { display: flex; gap: 35px; align-items: flex-start; margin: 34px 0 35px; }
+.portrait-wrap { position: relative; width: 196px; flex: 0 0 196px; margin: 8px 8px 12px; }
+.portrait { display: block; width: 196px; height: 237px; object-fit: cover; border: 1px solid #d8dadd; box-sizing: border-box; }
+.portrait-bear, .portrait-tiger { position: absolute; pointer-events: none; opacity: .64; height: auto; }
+.portrait-bear { width: 66px; top: -23px; left: -30px; }
+.portrait-tiger { width: 72px; bottom: -22px; right: -32px; }
+.profile-text { padding-top: 0; }
+.profile-text h2 { font-size: 23px; color: #171717; margin: 0 0 12px; }
+.profile-text p { margin: 0 0 15px; }
+.placeholder { color: #666; }
+section { margin: 27px 0; }
+h2 { color: #243e69; font-size: 21px; margin: 0 0 9px; }
+h3 { color: #243e69; font-size: 17px; margin: 20px 0 7px; }
+p { margin: 0 0 12px; }
+ul { list-style-type: square; padding-left: 27px; margin: 7px 0 14px; }
+li { margin: 5px 0; }
+footer { border-top: 1px solid #ececec; color: #666; font-size: 13px; padding: 13px 0 4px; margin-top: 32px; }
+@media (max-width: 600px) {
+  .page { padding: 0 18px 28px; }
+  .site-header { padding-top: 22px; }
+  .site-header h1 { font-size: 24px; }
+  nav a { display: inline-block; margin: 0 13px 5px 0; }
+  .profile { display: block; margin-top: 32px; }
+  .portrait-wrap { margin-bottom: 37px; margin-left: 18px; }
+  .profile-text { margin-top: 0; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
