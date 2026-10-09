@@ -1,0 +1,62 @@
+/* Classical academic homepage style, inspired by Lin Lin's Caltech site.
+   Edit colors, widths and typography here. */
+:root {
+  --banner: #3d5e94;
+  --navy: #203d73;
+  --body: #151515;
+  --line: #e1e1e1;
+  --content-width: 870px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--body); background: #fff; font: 16px/1.28 Arial, Helvetica, sans-serif; }
+a { color: #173971; text-decoration: underline; text-underline-offset: 1px; }
+a:hover, a:focus-visible { color: #456fad; }
+a:focus-visible { outline: 2px solid #456fad; outline-offset: 3px; }
+.site-header { background: var(--banner); color: white; }
+.site-header .inner { max-width: var(--content-width); margin: auto; padding: 69px 0 32px; }
+.site-header h1 { margin: 0; font-size: 29px; line-height: 1.15; font-weight: 700; }
+.site-nav { border-bottom: 1px solid #d9d9d9; background: linear-gradient(#fdfdfd,#f5f5f5); }
+.site-nav .inner { margin: auto; max-width: var(--content-width); display: flex; flex-wrap: wrap; }
+.site-nav a { padding: 14px 19px; font-size: 14px; font-weight: 700; text-decoration: none; border-left: 1px solid #e9e9e9; }
+.site-nav a:last-child { border-right: 1px solid #e9e9e9; }
+.site-nav a:hover { background: #eaeff8; }
+.site-nav a[aria-current="page"] { background: #eaf0f8; }
+main { max-width: var(--content-width); margin: 0 auto; padding: 37px 0 72px; }
+.profile { display: grid; grid-template-columns: 217px minmax(0, 1fr); gap: 34px; align-items: start; margin-bottom: 34px; }
+.profile-photo { display: block; width: 217px; height: 217px; object-fit: cover; background: #dfe8f5; }
+.profile h2 { color: #111; font-size: 25px; margin: 0 0 12px; }
+.profile .position { font-size: 17px; font-weight: 700; margin: 0 0 24px; }
+.profile .detail { margin: 0 0 15px; }
+.section { margin: 0 0 23px; }
+h2.section-heading { font-size: 21px; color: var(--navy); margin: 0 0 11px; line-height: 1.15; }
+h3 { font-size: 17px; color: #111; margin: 19px 0 6px; }
+p { margin: 0 0 12px; }
+ul { margin: 4px 0 0; padding-left: 28px; }
+li { margin: 3px 0; }
+.section li { padding-left: 0; }
+.publication, .project { margin: 0 0 17px; }
+.publication .paper-title { font-weight: 700; }
+.muted { color: #535353; }
+.small { font-size: 14px; }
+.site-footer { max-width: var(--content-width); margin: 0 auto; padding: 16px 0 35px; border-top: 1px solid var(--line); color: #666; font-size: 13px; }
+@media (max-width: 940px) {
+  .site-header .inner, .site-nav .inner, main, .site-footer { margin-left: 25px; margin-right: 25px; }
+}
+@media (max-width: 600px) {
+  .site-header .inner { padding: 38px 0 25px; }
+  .site-header h1 { font-size: 26px; }
+  .site-nav a { padding: 12px 11px; font-size: 13px; }
+  main { padding-top: 26px; }
+  .profile { grid-template-columns: 1fr; gap: 20px; }
+  .profile-photo { width: 190px; height: 190px; }
+  .profile .position { margin-bottom: 16px; }
+  h2.section-heading { font-size: 20px; }
+}
+
+/* Keep the two research themes easy to scan without changing the classic layout. */
+.research-area { margin: 0 0 21px; }
+.research-area h3 { margin: 12px 0 7px; }
+.research-area .project { margin: 0 0 18px 17px; }
+.research-area .project h3 { margin-bottom: 5px; }
+.research-area[id] { scroll-margin-top: 18px; }
